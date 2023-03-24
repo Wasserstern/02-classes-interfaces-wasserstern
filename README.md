@@ -1,8 +1,6 @@
 _This is an assignment to the [Software Architecture](https://ohm-softa.github.io) class at the [Technische Hochschule Nürnberg](http://www.th-nuernberg.de)._
 
 # Assignment 2: Classes and interfaces revisited
-# This is a simple test
-Testing stuff
 
 In this assignment we'll be looking at 
 - static and regular inner classes
