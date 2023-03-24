@@ -8,11 +8,12 @@ import java.util.Iterator;
  */
 public class SimpleListImpl implements SimpleList, Iterable {
 
-
+	Element head;
 	@Override
 	public void add(Object o) {
-		if(head == null){
-			head.item = 0;
+		if(this.head == null){
+			this.head = new Element();
+			head.item = o;
 		}
 		else{
 			Element e = this.head;
@@ -31,7 +32,7 @@ public class SimpleListImpl implements SimpleList, Iterable {
 			return 0;
 		}
 		else{
-			int size = 1;
+			int size = 0;
 			Element e = this.head;
 			while(e != null){
 				e = e.next;
@@ -52,17 +53,13 @@ public class SimpleListImpl implements SimpleList, Iterable {
 
 		@Override
 		public boolean hasNext() {
-			if(current.next != null){
-				return true;
-			}
-			else{
-				return false;
-			}
+			return current != null;
 		}
 
 		@Override
 		public Object next() {
-			return current.next;
+			current = current.next;
+			return current;
 		}
 
 	}
@@ -72,7 +69,7 @@ public class SimpleListImpl implements SimpleList, Iterable {
 		Element next;
 	}
 
-	Element head;
+	
 
 	@Override
 	public Iterator iterator() {

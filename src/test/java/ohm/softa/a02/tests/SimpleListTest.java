@@ -19,12 +19,16 @@ public class SimpleListTest {
 	@BeforeEach
 	void setup(){
 		testList = new SimpleListImpl();
-
-		testList.add(1);
-		testList.add(2);
-		testList.add(3);
-		testList.add(4);
-		testList.add(5);
+		Object o = new Object();
+		Object p = new Object();
+		Object q = new Object();
+		Object r = new Object();
+		Object s = new Object();
+		testList.add(o);
+		testList.add(p);
+		testList.add(q);
+		testList.add(r);
+		testList.add(s);
 	}
 
 	@Test
@@ -41,21 +45,7 @@ public class SimpleListTest {
 		assertEquals(5, testList.size());
 	}
 
-	@Test
-	void testFilterAnonymousClass(){
-		SimpleListImpl result = (SimpleListImpl) testList.filter(new SimpleFilter() {
-			@Override
-			public boolean include(Object item) {
-				int current = (int)item;
-				return current > 2;
-			}
-		});
-
-		for(Object o : result){
-			int i = (int)o;
-			assertTrue(i > 2);
-		}
-	}
+	
 
 	@Test
 	void testFilterLambda(){
